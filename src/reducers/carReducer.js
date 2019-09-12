@@ -1,4 +1,6 @@
 import { ADD_FEATURE } from '../actions';
+import { REMOVE_FEATURE } from '../actions';
+import { UPDATE_TOTAL } from '../actions';
 
 const initialState = {
     additionalPrice: 0,
@@ -24,6 +26,7 @@ const initialState = {
             console.log('hello from the add feature')
             return {
                 ...state,
+                features: [...state.car.features, action.payload]
             }
         default: 
             return state;
